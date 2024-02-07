@@ -25,5 +25,5 @@ describe("When Events is created", () => {
       await screen.findByText("Envoyer");
       expect(onSuccess).toHaveBeenCalled();
     });
-  });
+  })
 });

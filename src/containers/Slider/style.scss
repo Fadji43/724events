@@ -86,3 +86,13 @@
     transform: translateX(0%);
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Styles pour les tablettes (largeur d'écran entre 768px et 1023px) */
+  /* Ajoutez des styles spécifiques pour les tablettes */
+}
+
+@media screen and (max-width: 767px) {
+  /* Styles pour les mobiles (largeur d'écran maximale de 767px) */
+  /* Ajoutez des styles spécifiques pour les mobiles */
+}

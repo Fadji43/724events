@@ -8,6 +8,9 @@ const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000
 
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [error, setError] = useState(null);
+
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
@@ -16,15 +19,18 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+        setError(null);
+        onSuccess();
       } catch (err) {
         setSending(false);
+        setError(err.message || "Une erreur s'est produite.");
         onError(err);
       }
     },
-    [onSuccess, onError]
+    [onSuccess,onError]
   );
   return (
-    <form onSubmit={sendContact}>
+    <form onSubmit={sendContact}  >
       <div className="row">
         <div className="col">
           <Field placeholder="" label="Nom" />
