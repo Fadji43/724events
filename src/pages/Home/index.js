@@ -27,7 +27,7 @@ const Page = () => {
       <section className="ServicesContainer">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
-        <div className="ListContainer">
+        <div className="ListContainer" data-testid="event-list-testid">
           <ServiceCard imageSrc="/images/priscilla-du-preez-Q7wGvnbuwj0-unsplash1.png">
             <h3>Soirée d’entreprise</h3>
             Une soirée d’entreprise vous permet de réunir vos équipes pour un
@@ -57,7 +57,7 @@ const Page = () => {
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
-      <section className="PeoplesContainer">
+      <section className="PeoplesContainer" data-testid="people-list-testid">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
@@ -115,8 +115,8 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
-      <div className="col presta">
+    <footer className="row" data-testid="footer-container">
+      <div className="col presta" data-testid="last-event-card">
         <h3>Notre dernière prestation</h3>
         {last && (
           <Modal Content={<ModalEvent event={last}  />}>
